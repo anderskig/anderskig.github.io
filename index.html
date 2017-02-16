@@ -1,0 +1,297 @@
+<html>
+  <head>
+    <!-- Favicon, loaded as base64 string for better browser compability-->
+    <link href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAAACXBI
+                                          WXMAACTpAAAk6QFQJOf4AAAAB3RJTUUH4QEYEDUcExcJzgAAAB1pVFh0Q29tbWVudAAAAAAAQ3Jl
+                                          YXRlZCB3aXRoIEdJTVBkLmUHAAAKGklEQVRIx42XWYydd3nGf/9vO8t39jkzniWeyXjGnphMqCEJ
+                                          KAslluUSOyVqAqQUukWKVJqiAhcgNRLqcoFQI7VNL9qCuGBpEhQpAanE0AbjLHLAoXGMl8x47Nn3
+                                          Ofs53/nW//f9exE1Qo1V8Vy+r/T+9Oi9eR7Bb6DdRmcIIW5VqAcF4hhCzADWO1sVJoprcZy8ImP1
+                                          gkJdnhyu7AJc32wyPVa54U1xo+HabpPxfRU2201LSO1ZBCcEIqPpOn6/B506hpIkMibSDCLTxixW
+                                          UShUovoKTh0cG3jk/zPzHvD1zZqYHhtUy1u1x4WmP4lSWd0yWbx4nn30qdoZTEOgxSEqjgiCkEDp
+                                          NPshNb3A/tk7ESgEKCHU56bHqt/8jR1f36y9qJQ6CQIh4M0zP+FgymP60GEIHAyhSBKJkBIpQ4Iw
+                                          xosU3TDh9aUtjj7yGJoQgEIT4rSuafdPDJflDcGb9aYYq1bUTqv18tVl76OX5nucf/OXTBW63DeV
+                                          MDt7G0gPQxNopglJAokkcnrIMKDfblFrNmmHsGzt55a7HmRqLIVQigTOjlQK93b6PkU7DYABsL7T
+                                          ZKxaUXMrey/+679vfvTCrxbobL7I0MAwMzfbjI4dRkU+GgJhZSGdhjiGwEfoPugxhqEjopCg3WH+
+                                          +jz/9v0FiiPTfPnzRzk8OXhPre2+ULTTDzd7LpV89h3w/uEKT/9o4fF//NbKycVrP8fdPsvYrX9C
+                                          1nDw/Cu4rRplawShBNg6ShioRKJQRLFERgFxHKGSiMj1yBkR2eIE3b1tvvjnf0FlZILf/thnHopi
+                                          +QVTN55617FSynr0iZefXFu8yLB+GXnkzwj9AMfr0m7ViIMSSeCCiBF9UNJGSYmQISiFihMUoJk6
+                                          mbyBu9hBCA0jP4FtVtndOM2z//JXWOYT/6SUem6919/WAJZr9WfnLr6VfeDeCsNT97F27RzELr7X
+                                          wXdd3G4TGXQRhgaGgW6m0awsSuhoVoZUoYKRLmDly+hWCi/0iXpLRF6LJHJJF2YI4hLfeeqrfP07
+                                          L/3leCGHdvTox4bu/cCdJ7bnn2aoWqC+8RrpXJVup4HX72EZGgYJ/b6DlimAEETdGlF9m1hGIAz6
+                                          9Tr13S1koigNDJPP5VHeGoHXJY5cNDODXT6AsA5x9vR/fAXA2K3t3ZrNZjNx3OO73/4eW82Ym98/
+                                          Qrd+DeU75OwMuXIVPT+AG0RsXLvG0uo6FRPGykVkEvOrxVV+8uY1Ok6P0UqBSnWQoDWPqxtomSpK
+                                          xaSzZezh97O0/KrmKPWoUR686cEoDOg7XRauX6I0dowk6OL6ii9//BZ2N3+Bli0SJYoff/9Znnvl
+                                          LZxQsj9n8dePf4p8eZhnfvwMG54ibRiooMbA0BATZY0ekmXPA6Ej0DAMjX47xanXLz1m2LZ9TGYy
+                                          KE3DDyJk2KXX3SSWDr8znua0k8OXAsNpkM9m+dKnTtBqtKmW8oyOHCSdG+Cu2RksTWd0sIRIWdT9
+                                          iOptBzm7VMZvewg9Tc7KgdAYmT7CoPBmDA1m4tBHBzLZFO3aRcZGKhwYalKevJvKL15F5wil0gAP
+                                          fOITqDAkDiMsK0XiBqAEt4yO8OG7PkSqUET6Hj888zKtTpvR6gSVZAbfaeC3zhPHk+TSFf7okd8v
+                                          aUokVsqysO0suVyBXGmGJGzRdn1UFHP7734aXSTo6Ry6lSe9b5JcdRQlJUYqhWHnKGRsFuevEHVa
+                                          xDIhn8kyM3WIra0FtpbOkCAZLEQU5Dk2l/6TcqWqG6HvY5omuoB0JsOgvQ+3v8BqvcP5tR7vmyjT
+                                          6K1RtLMknkvY73H+9CnylSFMu0DZXOHtlVWafY/raxvMHpyi0WwxUB1iNSxTKNv4fpc9PyCfShD+
+                                          GoFKYcRxFMYysuI4JDd4O2ltD2kV2Nio8fc/6vC3Dwl2V1fJ6Ypio8bq0jJLrS63j+zj9Gs/Y2Wv
+                                          zXqzx3C1TGvLZbvn0PATnr+SY73uYOgehpmm60FKhNilAZx2I9FzhdKnO532kOPBTYc+ycrCq+xs
+                                          LxHFeUR6iBfOnOKNpR0quoNtSM4vLLLRarC6uY5p6uQLNo7rsbi5y3ajS9Nx6YeSt3c8UtkCqWyF
+                                          ILHwWysQNajtbiGlbOmRlLf2e507Byc/jiU65KwGlmXR7qdImxIV7KBQ9Op7DJYybDd7nH7jKn0s
+                                          jj9wkg8cvR/LzvHGuctkUhZtz6fWddmub5DPShJ/HSV9ErNI4m2QqATXcS7pqVQqMO2b/rhcPUTs
+                                          rxNHTQLPY6/eZbBaIqW7tFpNJgZy1NoOMlEcv+MQn73nGEPNmO0rVzE2m0yN7SNXsdjruKzWOrie
+                                          j65rhF4fSw/pOREFW5HN2nRb7Se0MFKX0/n9/SAM6LXXCIOAZquDUjqWFuCHkjCMmD00xeJWnbbj
+                                          0fFDUsM67pjOrt6hPSTI7s+ghGCv49L3I4QQOL0urtunXm+QhHV6vTa9bpsg6H1X8/qt3Xxl6lSn
+                                          s4VKElqtJn5kkC8WSackdr5IFEmUENzxvmkaPY/thsPKyjLra4u0m01Mr8/m+hZvr+4ilXo3X8gw
+                                          pDw0SmVoBOIIXTcQmvY1AA1g7vV/fiRRmjIMRbFYRGlZBkomiVLEUUgkQ4RI+IP776bt+FxY2ua1
+                                          y+us1rvous5Or8/cRovl3SZHf+sgkACCtG2DitE1hakLhCYioYlvjI5PYkwe+VOWL3wbos7nclXz
+                                          G4ahE9clBVsn8HyEJkikRDNMiqUyjz5wN//w3E957sx/Mz5YJG2ZOK7PWr3D+HCVop3G0HWiWGJZ
+                                          FgJBFHqksyamqT26tji/BqC3dy4A0Gtef3Ni8uBHYpkcaHcV+wbTCAGmYRDGMSc+PMv0+CiDhSzV
+                                          XIatvQZrey02Gx26rs/+oQqHx4fJZTOs7rXpeQGGYaDpBkpBJms/v7Jw6avj04fpNOvov578bpo4
+                                          8IwXRMeqA5nxlGWgkoRYSiKvx9889vA78UZGjA0PMTtWJaMllHMZRgdKVAp5SnaadMrktol9/Pzq
+                                          BooE0LBSmV8uz184PnbzYTaW5nj3x/+r11/5qXzr3Kv3FnLZH2hCoBsGQRhw3x23oUQCAjRDR/p9
+                                          UpbGiXs+yEdmp8mkLVKGIG3pKBSFXJpsykSGIWEYPL+ycPFDB245IjZX5t5laf83Ux8/+Xv814sv
+                                          PKwQX9Q1g0TGBIGPrilk6IKAdCaFYRm0Wi0cp4eUEZmUgYwjpIxpOy5+FEdCN/6wubf5yerwOEvz
+                                          F9Svc94DfunUDzl+8iFeOvWDpyzLHO33e19/5fxc0u028dwejtPBlxHpTIqO22NuY49yIUucxERx
+                                          Qqwkbhh+re8F053m3tN2rkR9Z+09pUG/UZNYujYPQBzFzsLVK6cbjdrf2bn82ux4ebDZ7mQjGaX6
+                                          fU/bqDXpun7iRbJlGOYlIXjiyWdeevjsxes/+/yD93TOzS0Thf4Nu9P/AEVqPNE8oTWAAAAAAElF
+                                          TkSuQmCC" rel="icon" type="image/x-icon" />
+    <!-- End favicon -->
+    <!-- Title -->
+    <title>Anders Gustafsson</title>
+    <!-- Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-type" content="text/html" charset="utf-8"/>
+    <!-- End Meta -->
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="static/css/cv.css">
+    <!-- End Stylesheets -->
+    <!-- Fonts -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Oswald">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto">
+    <script src="https://use.fontawesome.com/ba4970aea5.js"></script>  <!-- Is it a script? Is it a font? No. It's font awesome! -->
+    <!-- End Fonts -->
+    <!-- Javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="static/js/cv.js"></script>
+    <!-- Google Analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-91099747-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <!-- End Javascript-->
+  </head>
+  <body>
+    <div class="content">
+      <div class="top-content">
+        <div class="inner-wrapper flex-container flex-row align-center space-between-until-narrow">
+          <div class="top-left">
+            <table>
+              <tr>
+                <td>
+                  <div id="photo" class="round">
+                  </div>
+                <td>
+                  <h1>Anders Gustafsson</h1>
+                  <div class="about">
+                       - A late blooming coder who finally figured out that that hobby of his was going to be his work and calling.
+                       Now a software engineer with a knack for web and front-end actively looking for opportunities to learn and grow.
+                  </div>
+                </td>
+            </tr>
+          </table>
+        </div>
+        <div class="box no-margin">
+          <h3>Contact</h3>
+          <div class="box-body">
+            <ul>
+              <li>
+                  <i class="fa fa-envelope" aria-hidden="true"></i>
+                  &nbsp;andersg@gmail.com
+              </li>
+              <li class="nobreak">
+                <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                &nbsp;<a href="https://www.linkedin.com/in/andersg-developer">https://www.linkedin.com/in/andersg-developer</a>
+              </li>
+              <li class="nobreak">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                &nbsp;<a href="https://www.google.se/maps/place/131+38+Nacka/">https://www.google.se/maps/place/131+38+Nacka/</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="bottom-content inner-wrapper">
+        <div class="flex-container flex-row no-flex-until-needed">
+          <div id="container-timeline" class="container">
+            <div class="timeline-holder flex-container flex-col">
+              <div class="timeline-top timeline-marker">
+                Present day
+              </div>
+              <div class="timeline-item left timeline-padding">
+                <div class="timeline-item-content">
+                </div>
+                <div class="timeline-connector">
+                    <!--Top padding of timeline -->
+                </div>
+              </div>
+              <div class="timeline-item left" date="2016-11">
+                <div class="timeline-item-content">
+                  <h3>Software Engineer - Axis Communications</h3>
+                  <div class="item-top">
+                    November 2016 to present day
+                  </div>
+                  <div class="item-body">
+                    While my current employer is Axis Communications it's still pretty much the same job as with Cognimatics. Cognimatics was aquired by Axis in June 2016 and I became an Axis employee November 1st 2016.
+                  </div>
+                </div>
+                <div class="timeline-connector">
+                  <div class="dot"></div>
+                  <div class="top"></div>
+                  <div class="bottom"></div>
+                </div>
+              </div>
+              <div class="timeline-item right-if-wide">
+                <div class="timeline-connector">
+                  <div class="dot"></div>
+                  <div class="top"></div>
+                  <div class="bottom"></div>
+                </div>
+                <div class="timeline-item-content">
+                  <h3>Software Developer - Cognimatics AB</h3>
+                  <div class="item-top">
+                    November 2014 to November 2016
+                  </div>
+                  <div class="item-body">
+                    Mainly web development with emphasis on the front end, but Cognimatics was a small company that still did a lot in house. So being a software developer there really included all there is to full stack development including development operations. While the main focus was web development my working days there could consist of everything from server administration and hosting to project planning and support.
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item left" date="2016-11">
+                <div class="timeline-item-content">
+                  <h3>Risk Management and Safety Engineer - ÅF&nbsp;AB</h3>
+                  <div class="item-top">
+                    March 2013 to October 2014
+                  </div>
+                  <div class="item-body">
+                    Risk assessments for clients, mainly within the civil engineering/construction sector regarding hazardous goods. Also development of internal tools to improve and streamline the process of making these risk assessments.
+                  </div>
+                </div>
+                <div class="timeline-connector">
+                  <div class="dot"></div>
+                  <div class="top"></div>
+                  <div class="bottom"></div>
+                </div>
+              </div>
+              <div class="timeline-item right-if-wide">
+                <div class="timeline-connector">
+                  <div class="dot"></div>
+                  <div class="top"></div>
+                  <div class="bottom"></div>
+                </div>
+                <div class="timeline-item-content">
+                  <h3>Masters, Risk Management and Safety Engineering - The Faculty of Engineering at Lund University</h3>
+                  <div class="item-top">
+                    September 2008 to April 2013
+                  </div>
+                  <div class="item-body">
+                    Three years of Engineering Nanoscience and a two year Masters in Risk Management.
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item left timeline-padding">
+                <div class="timeline-item-content">
+                </div>
+                <div class="timeline-connector">
+                    <!--Bottom padding of timeline -->
+                </div>
+              </div>
+              <div id="timeline-bottom" class="timeline-marker">
+                The distant past
+              </div>
+            </div>
+          </div>
+
+          <div id="container-boxes" class="container flex-container flex-row flex-grow">
+            <div id="box-languages" class="box">
+              <h3>Languages</h3>
+              <div class="box-body">
+                <ul>
+                  <li>
+                    <div class="list-header">Proficient</div>
+                    <ul class="bullet-list">
+                      <li>JavaScript</li>
+                      <li>Python</li>
+                      <li>HTML5/CSS3</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <div class="list-header">Competent</div>
+                    <ul class="bullet-list">
+                      <li>Java</li>
+                      <li>PHP</li>
+                      <li>C</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <div class="list-header">AFK</div>
+                    <ul class="bullet-list">
+                      <li>Swedish (native)</li>
+                      <li>English (fluent)</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div id="box-technologies" class="box">
+              <h3>Technologies &amp; Frameworks</h3>
+              <div class="box-body">
+                <ul>
+                  <li>
+                    <div class="list-header">Proficient</div>
+                    <ul class="bullet-list">
+                      <li><a title="General purpose JavaScript framework" target=_blank href="https://jquery.com">jQuery</a></li>
+                      <li><a title="Javascript HTML5 canvas framework" href="http://fabricjs.com/">Fabric.js</a></li>
+                      <li><a title="Python web framework" href="http://flask.pocoo.org/">Flask</a></li>
+                      <li><a title="Front-end templating framework for Python" href="http://jinja.pocoo.org/docs/2.9/">Jinja2</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <div class="list-header">Competent</div>
+                    <ul class="bullet-list">
+                      <li><a title="HTML, CSS and JS framework for responsive design" href="http://getbootstrap.com/">Bootstrap</a></li>
+                      <li><a title="Software containerization platform" target=_blank href="https://www.docker.com/">Docker</a></li>
+                      <li><a title="Automation and schedulazation server" target=_blank href="https://jenkins.io/">Jenkins</a></li>
+                      <li><a title="Database server" target=_blank href="https://www.mysql.com/">MySQL</a></li>
+                      <li><a title="Web server" target=_blank href="https://httpd.apache.org/">Apache</a></li>
+                      <li><a title="Version control system" target=_blank href="https://git-scm.com/">Git</a></li>
+                      <li><a title="Operating system" target=_blank href="https://www.ubuntu.com/">Linux (Debian/Ubuntu)</a></li>
+                      <li><a title="Server administation automation" href="https://www.ansible.com/">Ansible</a></li>
+                      <li><a title="The integrated development environment and self development kit for Andoird" href="https://developer.android.com/studio/">Android Studio &amp; SDK</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div id="box-personal" class="box">
+              <h3>Personal</h3>
+              <div class="box-body">
+                <ul class="bullet-list">
+                  <li>Born 1986.</li>
+                  <li>Living with girlfriend and cat.</li>
+                  <li>An avid rock climber who loves to spend time outdoors, travelling, exploring. Preferably equipped with a camera.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-box">
+      This page built with responsive HTML5, CSS3 and JavaScript with a little help of <a href="https://jquery.com">jQuery</a> by John Resig et. al. and <a href="http://fontawesome.io">FontAwesome</a> by Dave Gandy.
+    </div>
+    <div class="loader-overlay">
+      <img height="200" width="200" src="static/img/gears.gif">
+    </div>
+  </body>
+</html>

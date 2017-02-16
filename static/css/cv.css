@@ -1,0 +1,316 @@
+/*
+ * General styling and page layout start
+ */
+body {
+  background:#efefef;
+  font-family:"Roboto";
+  color:#333;
+  margin:0;
+  position:relative;
+}
+a {
+  color:inherit;
+}
+a:hover {
+  text-decoration: underline;
+  color:#FF3B3F;
+}
+i {
+  width:15px;
+  text-align:right;
+  margin-right:2px;
+}
+h1, h2, h3, h4 {
+  font-family: "Oswald";
+  color:#FF3B3F;
+  margin:0;
+}
+.nobreak {
+  white-space: nowrap;
+  overflow-x:hidden;
+  text-overflow:ellipsis;
+}
+.content {
+  margin:auto;
+  min-width:300px;
+}
+.top-content {
+  margin:0;
+  padding:20px 30px;
+  background:#565656;
+}
+.bottom-content {
+  padding-bottom: 80px /* Make room for absolute position footer*/
+}
+.inner-wrapper {
+  max-width:1800px;
+  margin:auto;
+}
+/*
+ * General styling and page layout end
+ */
+ /*
+  * Property styles start
+  */
+.round {
+  border-radius:50%;
+}
+.container {
+  margin:10px;
+  padding:10px;
+}
+.flex-container {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+.space-between-until-narrow {
+  justify-content: space-between;
+}
+.align-center {
+  align-items: center;
+}
+.justify-start {
+  justify-content: flex-start;
+}
+.no-flex-until-needed {
+  flex-wrap:nowrap;
+}
+@media only screen and (max-width: 1100px) {
+    .no-flex-until-needed {
+        flex-wrap:wrap;
+    }
+}
+.flex-col {
+  flex-direction: column;
+}
+.flex-row {
+  flex-direction: row;
+}
+.flex-grow {
+  flex-grow:1;
+}
+/*
+ * Property styles end
+ */
+/*
+ * Header styles start
+ */
+.top-left {
+  display:inline-block;
+  width:60%;
+  min-width: 200;
+}
+.top-content .about {
+  color:#fff;
+  margin-right:10px;
+  font-style:italic;
+  font-size:90%;
+}
+.top-content #photo {
+  width:100px;
+  height:100px;
+  background:url("../img/anders.png");
+  margin-right:10px;
+}
+/*
+ * Header styles end
+ */
+/*
+ * Timeline styles start
+ */
+.timeline-holder {
+  width:720px;
+  position:relative;
+}
+.timeline-item.left {
+  text-align:right;
+}
+.timeline-item.right {
+  margin-left:356px;
+}
+.timeline-item {
+  width:50%;
+  position:absolute;
+  top:0;
+  display:flex;
+  flex-wrap:nowrap;
+  min-height:40px;
+}
+.timeline-item-content {
+  width: 90%;
+  padding: 10px 0;
+}
+.timeline-item.right .timeline-item-content h3,
+.timeline-item.right .timeline-item-content .item-top {
+    border-left: 4px solid #a9a9a9;
+    padding-left: 5px;
+}
+.timeline-item.left .timeline-item-content h3,
+.timeline-item.left .timeline-item-content .item-top {
+    padding-right: 5px;
+    border-right: 4px solid #a9a9a9;
+}
+.timeline-item .item-top {
+  font-family:"Oswald";
+  font-size:0.8em;
+  margin-bottom:5px;
+}
+.timeline-item .item-body {
+  padding:0 10px;
+}
+.timeline-connector {
+  width:35px;
+  display:inline-block;
+  z-index:2;
+  position:relative;
+  min-height:40px;
+}
+.timeline-connector .dot {
+  border-radius:50%;
+  background:#FF3B3F;
+  height:10px;
+  width:10px;
+  top:13px;
+  position:absolute;
+  border:4px solid #a9a9a9;
+}
+.timeline-item.left .timeline-connector .dot {
+  left:28px;
+}
+.timeline-item.right .timeline-connector .dot {
+  right:28px;
+}
+.timeline-connector .top {
+  height:20px;
+  border-bottom: 4px solid #a9a9a9;
+}
+.timeline-item.right .timeline-connector {
+  border-left: 4px solid #a9a9a9;
+}
+.timeline-item.left .timeline-connector {
+  border-right: 4px solid #a9a9a9;
+}
+.timeline-marker {
+  position:absolute;
+  z-index:5;
+  font-size: 80%;
+  margin-left:50%;
+  transform:translateX(-50%);
+  background: #a9a9a9;
+  padding:2px 4px;
+  border-radius:2px;
+  color:#fff;
+}
+.timeline-top {
+  top:0;
+}
+/*
+ * Timeline changes from two to one columns on smaller screens.
+ * Some adjustments are also made for the header at the same time.
+ */
+@media only screen and (max-width: 800px) {
+    .space-between-until-narrow {
+      justify-content: space-around;
+    }
+    .top-left {
+      margin-bottom:10px;
+      width:100%;
+    }
+    .timeline-holder {
+      width:100%;
+    }
+    .timeline-item {
+      width:100%;
+      max-width:450px;
+      position:relative;
+      top:0;
+    }
+    .timeline-item.left .timeline-connector .dot {
+        left:25px;
+        right:0;
+    }
+    .timeline-marker {
+      right: 0;
+      transform: translateX(10%);
+    }
+}
+/*
+ * Timeline styles end
+ */
+/*
+ * Boxes styles start
+ */
+.box {
+  width:240px;
+  min-height:50px;
+  padding:10px;
+  margin:10px;
+  background:#D7CEC7;
+  border-radius:5px;
+  flex-grow:1;
+  max-width:400px;
+}
+.no-margin {
+  margin:0;
+}
+.box-body {
+  padding:10px;
+}
+.box ul {
+  margin:0;
+  padding-left:10px;
+  list-style: none;
+}
+.box-body ul.bullet-list {
+  padding-left:15px;
+  list-style-type: disc;
+}
+.box-body li>ul.bullet-list {
+  padding-left:25px;
+}
+.box-body ul {
+  padding-left:0;
+}
+.list-header {
+  margin-top:5px;
+  font-family:Oswald;
+}
+/*
+ * Boxes styles end
+ */
+/*
+ * Footer box
+ */
+.footer-box {
+  text-align: center;
+  width:calc(100% - 20px);
+  position:absolute;
+  font-size:80%;
+  z-index:150;
+  background:#565656;
+  color:#FFF;
+  bottom:0;
+  padding:10px;
+  margin: 0;
+  min-height: inherit;
+}
+/*
+ * Loader overlay
+ */
+.loader-overlay {
+  background:#efefef;
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:200;
+}
+.loader-overlay img {
+  position:relative;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+}
