@@ -1,82 +1,110 @@
-$(window).bind("load", function() {
-  /*
-   * To account for slow external font loads in Firefox and IE we cannot do positioning until page is fully loaded.
+"use strict";
+
+const TimeLine = {
+  timelineBottom: null,
+  containerTimeline: null,
+
+  /**
+   * Handle window resizing
+   * @param {MediaQueryList} mq
    */
-  "use strict";
-  var $timeline_bottom = $("#timeline-bottom"),
-      $container_timeline = $("#container-timeline"),
-      $loader_overlay = $(".loader-overlay");
-      $loader_overlay.fadeOut("fast");
-   if (matchMedia) {
-     var mq = window.matchMedia("(max-width: 800px)");
-     mq.addListener(widthChange);
-     widthChange(mq);
-   }
-   // Media query change
-   function widthChange(mq) {
-     if (mq.matches) {
-       // Window width is less than 800px;
-       $(".timeline-item.right-if-wide").each(function () {
-         var $connector = $(this).children(".timeline-connector").clone();
-         $(this).children(".timeline-connector").remove();
-         $connector.appendTo($(this));
-         positionTimeline(false);
-         $(this).removeClass("right").addClass("left");
-       });
-     } else {
-       // Window width is more than 800px
-       $(".timeline-item.right-if-wide").each(function () {
-         var $connector = $(this).children(".timeline-connector").clone();
-         $(this).children(".timeline-connector").remove();
-         $connector.prependTo($(this));
-         $(this).removeClass("left").addClass("right");
-       });
-       positionTimeline(true);
-     }
-   }
-  /*
-  * Position timeline items
-  */
-  function positionTimeline(is_wide) {
-     var $prev_item = null,
-         $second_prev = null,
-         second_prev_topval = 0,
-         prev_topval = 0,
-         items_end_at,
-         container_height;
-     $(".timeline-item").each( function() {
-       var $item = $(this),
-           topval = 0;
-        if (is_wide) {
-         if ($prev_item !== null) {
-           if (!$item.hasClass("timeline-padding")) {
-             if($second_prev !== null) {
-               topval = parseInt($second_prev.height()) +  second_prev_topval;
-               if (prev_topval === topval) {
-                 topval += 40; // To offset first first right aligned item.
-               }
-             } else {
-               topval = $prev_item.height() + prev_topval;
-             }
-           } else {
-             topval = $prev_item.height() + prev_topval;
-           }
-         }
-       }
-       $item.animate({"top": topval}, 100);
-       second_prev_topval = prev_topval;
-       prev_topval = topval;
-       $second_prev = $prev_item;
-       $prev_item = $item;
-     });
-     items_end_at = prev_topval + $prev_item.height();
-     if (is_wide) {
-       $timeline_bottom.css("bottom","initial").animate({"top": items_end_at}, 100);
-       container_height = items_end_at + $timeline_bottom.height();
-     } else {
-       $timeline_bottom.css("top","initial").animate({"bottom": 0}, 100);
-       container_height = "initial";
-     }
-     $container_timeline.css("height", container_height);
+  widthChange(mq) {
+    const items = Array.from(
+      document.querySelectorAll(".timeline-item.right-if-wide")
+    );
+    if (mq.matches) {
+      // Window width is less than 800px;
+      items.forEach(item => {
+        const oldConnector = item.querySelector(".timeline-connector");
+        const newConnector = oldConnector.cloneNode(true);
+        oldConnector.parentNode.removeChild(oldConnector);
+        item.appendChild(newConnector);
+        item.classList.remove("right");
+        item.classList.add("left");
+      });
+      this.positionTimeline(false);
+    } else {
+      // Window width is more than 800px
+      items.forEach(item => {
+        const oldConnector = item.querySelector(".timeline-connector");
+        const newConnector = oldConnector.cloneNode(true);
+        oldConnector.parentNode.removeChild(oldConnector);
+        item.prepend(newConnector);
+        item.classList.remove("left");
+        item.classList.add("right");
+      });
+      this.positionTimeline(true);
+    }
+  },
+
+  /**
+   * Positions timeline items
+   * @param {boolean} isWide - window is wide or not.
+   */
+  positionTimeline(isWide) {
+    let prevItem = null;
+    let secondPrev = null;
+    let secondPrevTopval = 0;
+    let prevTopval = 0;
+    const items = Array.from(document.querySelectorAll(".timeline-item"));
+
+    items.forEach(item => {
+      let topval = 0;
+      if (isWide) {
+        if (prevItem !== null) {
+          if (!item.classList.contains("timeline-padding")) {
+            if (secondPrev !== null) {
+              topval = parseInt(secondPrev.getBoundingClientRect().height, 10) + secondPrevTopval;
+              if (prevTopval === topval) {
+                topval += 40; // To offset first first right aligned item.
+              }
+            } else {
+              topval = prevItem.getBoundingClientRect().height + prevTopval;
+            }
+          } else {
+            topval = prevItem.getBoundingClientRect().height + prevTopval;
+          }
+        }
+      }
+
+      item.style.top = topval + 'px';
+      secondPrevTopval = prevTopval;
+      prevTopval = topval;
+      secondPrev = prevItem;
+      prevItem = item;
+    });
+    const itemsEndAt = prevTopval + prevItem.getBoundingClientRect().height;
+    let containerHeight;
+    if (isWide) {
+      this.timelineBottom.style.bottom = "initial";
+      this.timelineBottom.style.top = itemsEndAt + "px";
+      containerHeight =
+        itemsEndAt + this.timelineBottom.getBoundingClientRect().height + "px";
+    } else {
+      this.timelineBottom.style.top = "initial";
+      this.timelineBottom.style.bottom = "0px";
+      containerHeight = "initial";
+    }
+    this.containerTimeline.style.height = containerHeight;
+  },
+
+
+  initialize() {
+    this.containerTimeline = document.getElementById("container-timeline");
+    this.timelineBottom = document.getElementById("timeline-bottom");
+    document.querySelector(".loader-overlay").classList.add("hide");
+
+    if (window.matchMedia) {
+      const mq = window.matchMedia("(max-width: 800px)");
+      mq.addListener(this.widthChange.bind(this));
+      this.widthChange(mq);
+    }
   }
-});
+}
+
+/**
+ * To account for slow external font loads in Firefox and IE we cannot do positioning until page is fully loaded.
+ */
+window.addEventListener("load", TimeLine.initialize.bind(TimeLine));
+
+
