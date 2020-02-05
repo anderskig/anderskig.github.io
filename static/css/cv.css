@@ -2,9 +2,9 @@
  * General styling and page layout start
  */
 body {
-  background: #efefef;
+  background: #fefefe;
   font-family: "Roboto";
-  color: #333;
+  color: #545454;
   margin: 0;
   position: relative;
 }
@@ -13,7 +13,7 @@ a {
 }
 a:hover {
   text-decoration: underline;
-  color: #ff3b3f;
+  color: #EE6352;
 }
 i {
   width: 15px;
@@ -25,8 +25,11 @@ h2,
 h3,
 h4 {
   font-family: "Oswald";
-  color: #ff3b3f;
+  color: #3FA7D6;
   margin: 0;
+}
+h1 {
+  color: #FAC05E;
 }
 .nobreak {
   white-space: nowrap;
@@ -40,10 +43,7 @@ h4 {
 .top-content {
   margin: 0;
   padding: 20px 30px;
-  background: #565656;
-}
-.bottom-content {
-  padding-bottom: 80px; /* Make room for absolute position footer*/
+  background: #545454;
 }
 .inner-wrapper {
   max-width: 1800px;
@@ -111,11 +111,15 @@ h4 {
   font-style: italic;
   font-size: 90%;
 }
-.top-content #photo {
+.top-content .photo {
   width: 100px;
   height: 100px;
   background: url("../img/anders.png");
   margin-right: 10px;
+  background-size: contain;
+}
+.bottom-content {
+  padding-bottom: 40px;
 }
 /*
  * Header styles end
@@ -173,7 +177,7 @@ h4 {
 }
 .timeline-connector .dot {
   border-radius: 50%;
-  background: #ff3b3f;
+  background: #EE6352;
   height: 10px;
   width: 10px;
   top: 13px;
@@ -240,6 +244,9 @@ h4 {
     right: 0;
     transform: translateX(10%);
   }
+  .bottom-content {
+    padding-bottom: 60px; /* Make room for absolute position footer*/
+  }
 }
 /*
  * Timeline styles end
@@ -252,15 +259,27 @@ h4 {
   min-height: 50px;
   padding: 10px;
   margin: 10px;
-  background: #d7cec7;
+  background: #FAC05E;
   border-radius: 5px;
   flex-grow: 1;
   max-width: 400px;
+}
+.box.box--small {
+  max-width: 210px;
+}
+.box i {
+  font-size: 0.8em;
+}
+.box h3 {
+  color: #545454;
 }
 .no-margin {
   margin: 0;
 }
 .box-body {
+  padding: 0 10px 10px 10px;
+}
+.box-body.box-body--pad-top {
   padding: 10px;
 }
 .box ul {
