@@ -43,7 +43,7 @@ h1 {
 .top-content {
   margin: 0;
   padding: 20px 30px;
-  background: #545454;
+  background: #282c34;
 }
 .inner-wrapper {
   max-width: 1800px;
@@ -313,7 +313,7 @@ h1 {
   position: absolute;
   font-size: 80%;
   z-index: 150;
-  background: #565656;
+  background: #282c34;
   color: #fff;
   bottom: 0;
   padding: 10px;
